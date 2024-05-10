@@ -18,17 +18,15 @@ def atualizar_dinheiro_ganho(novo_valor):
 
 # Função para ler as locações do arquivo locacoes.txt
 def ler_locacoes():
-    if os.path.exists("locacoes.txt"):
-        with open("locacoes.txt", "r") as arquivo:
+    if os.path.exists("carros_locados.txt"):
+        with open("carros_locados.txt", "r") as arquivo:
             locacoes = []
             for linha in arquivo:
                 dados = linha.strip().split(",")
-                locacoes.append({"cliente": dados[0], "carro": dados[1], "dias": int(dados[2])})
+                locacoes.append({"cliente": dados[0], "carro": dados[1]})
     else:
         locacoes = []
     return locacoes
-
-# Arquivo: funcoes_locadora.py
 
 # Função para determinar o veículo mais locado
 def veiculo_mais_locado():
@@ -47,7 +45,6 @@ def veiculo_mais_locado():
         return veiculo_mais_locado, contagem_veiculos[veiculo_mais_locado]
     else:
         return None, 0
-
 
 # Função para verificar se um carro está locado para um cliente
 def verificar_locacao(placa, cpf):
@@ -79,7 +76,7 @@ def verificar_cliente(cpf):
 def remover_carro_locado(placa):
     locacoes = ler_locacoes()
     locacoes = [locacao for locacao in locacoes if locacao['carro'] != placa]
-    with open("locacoes.txt", "w") as arquivo:
+    with open("carros_locados.txt", "w") as arquivo:
         for locacao in locacoes:
             arquivo.write(f"{locacao['cliente']},{locacao['carro']},{locacao['dias']}\n")
 
@@ -113,7 +110,6 @@ def dinheiro_ganho():
     else:
         print("Nenhum dinheiro foi ganho ainda.")
         
-
 # Função para listar os clientes cadastrados
 def listar_clientes():
     if os.path.exists("clientes.txt"):

@@ -1,4 +1,3 @@
-# Arquivo: locadora.py
 
 import funcoes_locadora as locadora
 
@@ -44,7 +43,8 @@ def main():
             break
         else:
             print("Escolha inválida!")
-
+            
+#Função para Locar Veículos
 def locar_veiculo():
     carros = locadora.ler_carros_disponiveis()
     print("Carros disponíveis para locação:")
@@ -75,12 +75,11 @@ def cadastrar_cliente():
     cpf = input("CPF: ")
 
     locadora.cadastrar_cliente(nome, email, cpf)
-    
 
 #funcao para devolver o veiculo
 def devolver_veiculo():
-    placa = input("Digite a placa do veículo que deseja devolver: ")
-    cpf = input("Digite seu CPF: ")
+    placa = input("Digite seu CPF: ")
+    cpf = input("Digite a placa do carro a ser devolvido: ")
 
     if locadora.verificar_locacao(placa, cpf):
         locadora.remover_carro_locado(placa)
@@ -95,13 +94,15 @@ def veiculo_mais_locado():
         print(f"O veículo mais locado é '{carro}' com {quantidade} locações.")
     else:
         print("Nenhum veículo foi locado ainda.")
-        
+  
+#Função que mostra a quantidade de dinheiro ganhada com a Locadora      
 def dinheiro_ganho():
     locadora.dinheiro_ganho()
-    
+   
+#Função para listar o total de clientes 
 def listar_clientes():
     locadora.listar_clientes()
-
+    
 # Função para listar os carros atualmente locados
 def listar_carros_locados():
     print("Lista de carros atualmente locados:")
@@ -111,7 +112,6 @@ def listar_carros_locados():
             print(carro)
     else:
         print("Nenhum carro atualmente locado.")
-# As demais funções permanecem as mesmas
 
 # Função para listar todos os carros disponíveis para locação
 def listar_carros():
@@ -122,7 +122,8 @@ def listar_carros():
             print(f"{carro['carro']} - Placa: {carro['placa']} - Número do Veículo: {carro['numero_veiculo']} - Preço de Locação: R$ {carro['preco_locacao']:.2f}")
     else:
         print("Nenhum carro disponível para locação.")
-        
+   
+#Função para adicionar um novo carro a locadora     
 def adicionar_novo_carro():
     print("Adicionar novo carro:")
     carro = input("Digite o nome do carro: ")
@@ -133,6 +134,4 @@ def adicionar_novo_carro():
     locadora.adicionar_carro(carro, placa, numero_veiculo, preco_locacao)
     print("Carro adicionado com sucesso!")
 
-
-if __name__ == "__main__":
-    main()
+main()
