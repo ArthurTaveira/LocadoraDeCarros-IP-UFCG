@@ -1,0 +1,6 @@
+Fiat Uno,ABC123,123,400
+Ford Fiesta,DEF456,456,350
+Chevrolet Onix,GHI789,789,450
+Volkswagen Gol,JKL012,012,380
+fiat,frd321,455,600.0
+carro1,carro1,carro1,988.0
