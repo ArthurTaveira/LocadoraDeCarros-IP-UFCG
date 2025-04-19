@@ -1,5 +1,4 @@
 # Arquivo: funcoes_locadora.py
-
 import os
 
 # Função para ler o total de dinheiro ganho do arquivo dinheiro_ganho.txt
