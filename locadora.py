@@ -1,4 +1,3 @@
-
 import funcoes_locadora as locadora
 
 def menu():
