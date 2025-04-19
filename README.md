@@ -13,5 +13,5 @@ Este é um projeto desenvolvido como parte da disciplina **Introdução à Progr
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/ArthurTaveira/projetoIp.git
+   git clone https://github.com/ArthurTaveira/LocadoraDeCarros-Introdu-o-UFCG.git
    cd projetoIp
